@@ -1,6 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
+import { hydrate, render } from "react-dom";
 import './index.css';
+//import * as serviceWorker from './serviceWorker';
 
 function Square(props) {
   return (
@@ -170,7 +172,16 @@ class Game extends React.Component {
 
 // ========================================
 
-ReactDOM.render(
-  <Game />,
-  document.getElementById('root')
-);
+//ReactDOM.render(
+//  <Game />,
+//  document.getElementById('root')
+//);
+
+const rootElement = document.getElementById("root");
+render(<Game />, rootElement);
+//if (rootElement.hasChildNodes()) {
+//  hydrate(<Game />, rootElement);
+//} else {
+//  render(<Game />, rootElement);
+//}
+//serviceWorker.register();
